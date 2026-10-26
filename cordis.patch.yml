@@ -1,0 +1,4 @@
+# Bundle layer for dsh-workspace-folder-drop: one browser-half entry.
+- insert:
+    - id: workspace-folder-drop
+      name: 'dsh-workspace-folder-drop'

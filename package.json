@@ -1,0 +1,39 @@
+{
+  "name": "dsh-workspace-folder-drop",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Dropping a folder from the OS onto the sidebar Workspaces region registers it as a Workspace and opens it, instead of referencing it in the current conversation",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "cordis.patch.yml",
+    "icon.svg",
+    "README.md"
+  ],
+  "dsh": {
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-api-workspace-controller",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-workspace"
+      ]
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "meta": {
+    "title": "Workspace folder drop",
+    "description": "Dropping a folder on the sidebar Workspaces region creates a workspace for it."
+  },
+  "icon": "./icon.svg"
+}
